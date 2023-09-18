@@ -1,22 +1,22 @@
 package by.terrapizza.taf.ui;
 
+import by.terrapizza.taf.po.HomePage;
+import by.terrapizza.taf.util.Singleton;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BaseTest {
     WebDriver driver;
 
     @BeforeEach
     public void driverSetup() {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("https://terrapizza.by/");
+        HomePage homePage = new HomePage();
+        homePage.openHomePage();
     }
 
     @AfterEach
     public void driverShutDown() {
-        driver.quit();
+        Singleton.quitDriver();
     }
 }

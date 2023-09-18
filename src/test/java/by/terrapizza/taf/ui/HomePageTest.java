@@ -8,7 +8,7 @@ public class HomePageTest extends BaseTest {
 
     @Test
     public void testHomePageOpened() {
-        HomePage homePage = new HomePage(driver);
+        HomePage homePage = new HomePage();
         String actualCopywriterText = homePage.getCopyright();
         String extendsCopywriterText = "Copyright 2000 - 2023. Все права защищены. Любое копирование контента разрешено только с согласия правообладателя.";
         Assertions.assertEquals(extendsCopywriterText, actualCopywriterText);

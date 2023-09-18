@@ -1,5 +1,6 @@
 package by.terrapizza.taf.po;
 
+import by.terrapizza.taf.util.Singleton;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,8 +10,12 @@ public class HomePage {
     private String copyrightText = "//div[@class='page-footer__copyright']";
     private String menuLink = "//a[@href='https://terrapizza.by/menu']";
 
-    public HomePage(WebDriver driver) {
-        this.driver = driver;
+    public HomePage() {
+        this.driver = Singleton.getDriver();
+    }
+
+    public void openHomePage() {
+        driver.get("https://terrapizza.by/");
     }
 
     public String getCopyright() {

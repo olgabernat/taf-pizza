@@ -1,5 +1,6 @@
 package by.terrapizza.taf.po;
 
+import by.terrapizza.taf.util.Singleton;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,8 +17,8 @@ public class CartPage {
     private By firstProductInCartText = By.xpath("//div[@class='basket__products-item-name'][contains(text(), 'Пицца Маргарита')]");
     private By secondProductInCartText = By.xpath("//div[@class='basket__products-item-name'][contains(text(), 'Латте')]");
 
-    public CartPage(WebDriver driver) {
-        this.driver = driver;
+    public CartPage() {
+        this.driver = Singleton.getDriver();;
     }
 
     public void clickCartButton() {

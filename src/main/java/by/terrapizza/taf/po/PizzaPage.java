@@ -1,5 +1,6 @@
 package by.terrapizza.taf.po;
 
+import by.terrapizza.taf.util.Singleton;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,8 +11,8 @@ public class PizzaPage {
     private String margaritaPizzaAddLink = "//button[@data-id='364']";
     private String cookieLink = "//button[@class='close-icon']";
 
-    public PizzaPage(WebDriver driver) {
-        this.driver = driver;
+    public PizzaPage() {
+        this.driver = Singleton.getDriver();
     }
     public String getHeaderText() {
         WebElement headerTextElement = driver.findElement(By.xpath(headerText));

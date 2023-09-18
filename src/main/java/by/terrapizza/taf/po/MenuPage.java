@@ -1,5 +1,6 @@
 package by.terrapizza.taf.po;
 
+import by.terrapizza.taf.util.Singleton;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,8 +10,8 @@ public class MenuPage {
     private String pizzaLink = "//a[@class='menu-cats-list-item__info'][contains(@href,'/catalog/picca')]";
     private String barLink = "//a[@class='menu-cats-list-item__info'][contains(@href,'/catalog/bar')]";
 
-    public MenuPage(WebDriver driver) {
-        this.driver = driver;
+    public MenuPage() {
+        this.driver = Singleton.getDriver();
     }
 
     public void clickPizzaLink() {
